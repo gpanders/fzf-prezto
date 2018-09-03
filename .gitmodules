@@ -1,0 +1,4 @@
+[submodule "fzf"]
+	path = external
+	url = https://github.com/junegunn/fzf.git
+	branch = master
