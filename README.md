@@ -6,23 +6,18 @@ framework.
 
 ## Installation
 
-Make sure you have the line
+zprezto will load external modules found in the `$ZDOTDIR/.zprezto/contrib`
+directory.
 
-    zstyle ':prezto:load' pmodule-dirs $HOME/.zprezto-contrib
-
-in your `.zpreztorc` file.
-
-Then issue the following commands:
-
-    mkdir -p ~/.zprezto-contrib
-    git clone https://github.com/gpanders/fzf-prezto.git ~/.zprezto-contrib/fzf
-    cd ~/.zprezto-contrib/fzf
+    mkdir -p $ZDOTDIR/.zprezto/contrib && cd $_
+    git clone https://github.com/gpanders/fzf-prezto.git fzf
+    cd fzf
     git submodule update --init
 
 If you already have fzf installed, then the init script will detect your
 installation. Otherwise, you can install fzf by running:
 
-    ~/.zprezto-contrib/fzf/external/install --bin
+    $ZDOTDIR/.zprezto/contrib/fzf/external/install --bin
 
 ## prezto parameters
 
@@ -52,6 +47,6 @@ Add the above lines to your `.zpreztorc` file.
 
 ## Colorscheme
 
-The `color.zsh` file contains two color schemes: Solarized Dark and
-Solarized Light. You can add more color schemes of your own in this file and
-activate them by setting the appropriate `zstyle` in `.zpreztorc`.
+The `color.zsh` file contains three color schemes: Solarized Dark, Solarized
+Light, and Atom's One Dark. You can add more color schemes of your own in this
+file and activate them by setting the appropriate `zstyle` in `.zpreztorc`.
