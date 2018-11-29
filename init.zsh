@@ -44,8 +44,13 @@ __fzf_prog() {
     && echo "fzf-tmux -d${FZF_TMUX_HEIGHT}" || echo "fzf"
 }
 
-# Use ag if available
-if (( $+commands[ag] )); then
+# Use ripgrep or ag if available
+if (( $+commands[rg] )); then
+  export FZF_DEFAULT_COMMAND="rg --files"
+  _fzf_compgen_path() {
+    rg --files "$1"
+  }
+elif (( $+commands[ag] )); then
   export FZF_DEFAULT_COMMAND="ag -g ''"
   _fzf_compgen_path() {
     ag -g '' "$1"
