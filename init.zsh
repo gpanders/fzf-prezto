@@ -86,7 +86,7 @@ if zstyle -t ':prezto:module:fasd' loaded; then
   __fzf_cd() {
     local dir fzf
     fzf=$(__fzf_prog)
-    dir="$(fasd -Rdl "$1" | ${=fzf} -1 -0 --no-sort +m)" && cd "${dir}" || return 1
+    dir="$(fasd -Rdl "$*" | ${=fzf} -1 -0 --no-sort +m)" && cd "${dir}" || return 1
   }
   alias j='__fzf_cd'
 fi
